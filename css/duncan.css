@@ -1,45 +1,38 @@
 /* reset */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
 }
+
 body {
-	line-height: 1;
+    line-height: 1;
 }
+
 ol, ul {
-	list-style: none;
+    list-style: none;
 }
+
 blockquote, q {
-	quotes: none;
+    quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
+
+blockquote:before, blockquote:after, q:before, q:after {
+    content: '';
+    content: none;
 }
+
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 
 /* actual things */
@@ -48,51 +41,48 @@ html, body {
     overflow: hidden;
     font-family: 'Source Sans Pro', sans-serif;
 }
-
-#portrait {
-    position: absolute;
-    height: 150px;
-    top: -150px;
-    left: 75%;
-    transition: top 1s ease-out;
-}
-
-#home-info {
-    text-align: center;
-    margin-top: 20vh;
-    color: #3b3b3b;
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
-}
-
 h1 {
     font-weight: 400;
     font-size: 65px;
     line-height: 100px;
     animation: fadeInDown;
-    animation-duration: 1.25s; 
+    animation-duration: 1.25s;
+    text-align: center;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    margin-top: 20vh;
 }
 
 h1:hover {
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.3));
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.4));
 }
 
-h1:hover ~ #portrait {
+#portrait {
+    position: fixed;
+    height: 200px;
+    top: -200px;
+    left: 70%;
+    transition: top linear 2s;
+}
+
+h1:hover~#portrait {
     top: 0px;
-    transition: top 1s ease-in;
 }
 
 h2 {
     font-weight: 300;
     font-size: 42px;
     animation: fadeInUp;
-    animation-duration: 2s; 
+    animation-duration: 2s;
+    text-align: center;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 
 h2:hover {
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.3));
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.5));
 }
 
 #collapse {
@@ -100,12 +90,20 @@ h2:hover {
     transition: max-height 1s linear;
     overflow: hidden;
     line-height: 30px;
+    text-align: center;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 
-h2:hover ~ #collapse {
+h2:hover~#collapse {
     max-height: 500px;
     transition: max-height 1s linear;
-  }
+}
+
+#contact-icons {
+    text-align: center;
+    margin-top: 15px;
+}
 
 #contact-icons img {
     height: 30px;
@@ -113,12 +111,14 @@ h2:hover ~ #collapse {
     vertical-align: middle;
     margin: 20px 10px;
     animation: fadeInUp;
-    animation-duration: 3s; 
+    animation-duration: 3s;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.3));
 }
 
 #contact-icons img:hover {
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.3));
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.4));
+    filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.4));
     transform: scale(1.2);
     -webkit-transform: scale(1.2);
     transition: 0.2s;
