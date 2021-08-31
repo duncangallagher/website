@@ -61,9 +61,11 @@ h1:hover {
 #portrait {
     position: fixed;
     height: 200px;
-    top: -200px;
+    top: -210px;
     left: 70%;
     transition: top linear 2s;
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 
 h1:hover~#portrait {
