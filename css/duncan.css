@@ -97,6 +97,14 @@ h2:hover {
     filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 
+#collapse ul {
+    padding: 2rem 0rem 1rem 0rem;
+}
+
+#main-title {
+    font-weight: 600;
+}
+
 h2:hover~#collapse {
     max-height: 500px;
     transition: max-height 1s linear;
@@ -104,7 +112,6 @@ h2:hover~#collapse {
 
 #contact-icons {
     text-align: center;
-    margin-top: 15px;
 }
 
 #contact-icons img {
@@ -113,7 +120,7 @@ h2:hover~#collapse {
     vertical-align: middle;
     margin: 20px 10px;
     animation: fadeInUp;
-    animation-duration: 3s;
+    animation-duration: 2s;
     -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
     filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.3));
 }
