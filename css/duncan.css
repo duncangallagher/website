@@ -92,6 +92,11 @@ h2:hover {
     filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.6));
 }
 
+.dev-tag {
+    font-size: 24px;
+    font-weight: 700;
+}
+
 #collapse {
     max-height: 0px;
     transition: max-height 1s linear;
@@ -180,7 +185,7 @@ h2:hover~#collapse {
 
 #portfolio {
     text-align: left;
-    padding: 2% 25%;
+    padding: 0 25%;
     max-width: 1200px;
     display: none;
     animation: fadeIn;
@@ -207,4 +212,5 @@ h2:hover~#collapse {
 #portfolio-disclaimer {
     font-size: 14px;
     line-height: 18px;
+    margin-bottom: 50px;
 }
