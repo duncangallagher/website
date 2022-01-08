@@ -1,0 +1,175 @@
+<html>
+
+<head>
+    <title>WLR3000</title>
+    <link rel="stylesheet" href="wlr3000/main.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Duncan Gallagher">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand+SC" rel="stylesheet">
+    <script type="text/javascript" src="wlr3000/Winwheel.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div id="win-screen">
+        <br><br>
+        <p id="win-text"></p>
+        <img src="https://68.media.tumblr.com/6f5eea4a8fb114159d6a88ae1017164f/tumblr_n1ctvbw9z61r7l27do1_250.gif" style="height: 250px; width: auto;">
+    </div>
+
+    <div id="header-text">
+        <h1>Work Lunch Randomizer 3000</h1>
+        <p>Add your ideas for lunch, then spin the wheel!</p>
+        <br />
+    </div>
+    <div id="form-div">
+        <center>
+            <button type="submit" value="vote" id="add"><span style="font-family: Patrick Hand SC">Add a Place</span></button><br><br>
+            <input type="text" id="input1" value="">
+            <br>
+            <input type="text" id="input2" value="">
+            <br>
+            <input type="text" id="input3" value="">
+            <br>
+            <input type="text" id="input4" value="">
+            <br><br>
+            <button type="submit" value="" id="create-wheel"><span style="font-family: Patrick Hand SC">Create the Wheel!</span></button><br><br>
+        </center>
+    </div>
+    <div id="wheel-div" align="center">
+        <table cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td>
+                    <div class="power_controls">
+                        <button type="submit" value="vote" id="spin"><span style="font-family: Patrick Hand SC">SPIN THE WHEEL!</span></button>
+                        <br /><br /> &nbsp;&nbsp;
+
+                    </div>
+                </td>
+                <td width="400" height="500" class="the_wheel" align="center" valign="center">
+                    <canvas id="canvas" width="434" height="434">
+                        <p style="{color: white}" align="center">Sorry, your browser doesn't support canvas. Please try another.</p>
+                    </canvas>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+
+<script>
+    // number of lunch entries, used to create wheel sections
+    var entries = 0;
+
+    $("#input1").hide();
+    $("#input2").hide();
+    $("#input3").hide();
+    $("#input4").hide();
+    $("#create-wheel").hide();
+    $("#spin").hide();
+    $("#win-screen").hide();
+
+    $("#add").click(function () {
+        $("#create-wheel").show();
+        if (entries == 0) {
+            $("#input1").show();
+            entries++;
+        } else if (entries == 1) {
+            $("#input2").show();
+            entries++;
+        } else if (entries == 2) {
+            $("#input3").show();
+            entries++;
+        } else if (entries == 3) {
+            $("#input4").show();
+            entries++;
+        }
+    });
+
+    $("#create-wheel").click(function () {
+        $("#spin").show();
+        var place1 = document.getElementById("input1").value;
+        document.getElementById("input1").innerHTML = place1;
+
+        var place2 = document.getElementById("input2").value;
+        document.getElementById("input2").innerHTML = place1;
+
+        var place3 = document.getElementById("input3").value;
+        document.getElementById("input3").innerHTML = place1;
+
+        var place4 = document.getElementById("input4").value;
+        document.getElementById("input4").innerHTML = place1;
+
+        // Create new wheel object specifying the parameters at creation time.
+        window.theWheel = new Winwheel({
+            'numSegments': entries, // Specify number of segments.
+            'outerRadius': 212, // Set outer radius so wheel fits inside the background.
+            'textFontSize': 28, // Set font size as desired.
+            'textFontFamily': 'Patrick Hand SC',
+            'segments': // Define segments including colour and text.
+            [{
+                'fillStyle': '#eae56f',
+                'text': place1
+            }, {
+                'fillStyle': '#89f26e',
+                'text': place2
+            }, {
+                'fillStyle': '#7de6ef',
+                'text': place3
+            }, {
+                'fillStyle': '#e7706f',
+                'text': place4
+            },],
+            'animation': // Specify the animation to use.
+            {
+                'type': 'spinToStop',
+                'duration': 5, // Duration in seconds.
+                'spins': 8, // Number of complete spins.
+                'callbackFinished': 'alertPrize()'
+            }
+        });
+
+
+
+        var wheelSpinning = false;
+
+        // -------------------------------------------------------
+        // Click handler for spin button.
+        // -------------------------------------------------------
+
+        function startSpin() {
+            // Ensure that spinning can't be clicked again while already running.
+            if (wheelSpinning == false) {
+                // Based on the power level selected adjust the number of spins for the wheel, the more times is has
+                // to rotate with the duration of the animation the quicker the wheel spins.
+
+                theWheel.animation.spins = 8;
+
+
+                // Begin the spin animation by calling startAnimation on the wheel object.
+                theWheel.startAnimation();
+
+                // Set to true so that power can't be changed and spin button re-enabled during
+                // the current animation. The user will have to reset before spinning again.
+                wheelSpinning = true;
+            }
+        }
+        $("#spin").click(function () {
+            startSpin();
+        });
+    });
+
+    function alertPrize() {
+        // Get the segment indicated by the pointer on the wheel background which is at 0 degrees.
+        var winningSegment = theWheel.getIndicatedSegment();
+
+        // Do basic alert of the segment text. You would probably want to do something more interesting with this information.
+        $("#win-screen").show();
+        $("#win-text").html("We're going to <u>" + winningSegment.text + "</u></span> for lunch!")
+    }
+
+</script>
+
+</html>

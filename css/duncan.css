@@ -53,8 +53,8 @@ h1 {
     animation: fadeIn;
     animation-duration: 1s;
     text-align: center;
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
     margin-top: 15vh;
     cursor: pointer;
 }
@@ -70,8 +70,8 @@ h1:hover {
     top: -210px;
     left: 70%; 
     transition: top linear 2s;
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
 }
 
 h1:hover~#portrait {
@@ -79,19 +79,20 @@ h1:hover~#portrait {
 }
 
 h2 {
-    font-weight: 300;
+    font-weight: 400;
     font-size: 42px;
+    color: #2b7e8d;
     animation: fadeIn;
     animation-duration: 2s;
     text-align: center;
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.1));
     cursor: pointer;
 }
 
 h2:hover {
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.6));
-    filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.6));
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
 }
 
 .dev-tag {
@@ -116,7 +117,8 @@ h2:hover {
 }
 
 #main-title {
-    font-weight: 600;
+    font-weight: 700;
+    color: #2b7e8d;
 }
 
 h2:hover~#collapse {
@@ -136,7 +138,7 @@ h2:hover~#collapse {
     margin: 20px 10px;
     animation: fadeIn;
     animation-duration: 3s;
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
     filter: drop-shadow(5px 5px 5px rgba(124, 79, 79, 0.3));
 }
 
@@ -163,8 +165,8 @@ h2:hover~#collapse {
     color: #000;
     font-size: 18px;
     font-weight: 600;
-    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
-    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    -webkit-filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
 }
 
 #other-links a:hover {
@@ -195,7 +197,7 @@ h2:hover~#collapse {
 
 .project-description {
     font-size: 18px;
-    margin: 75px 0px;
+    margin: 50px 0px 100px 0px;
 }
 
 .project-title {
@@ -204,7 +206,7 @@ h2:hover~#collapse {
 }
 
 .project-thumbnail {
-    width: 150px;
+    width: 120px;
     height: auto;
     margin-right: 30px;
     float: left;

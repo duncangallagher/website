@@ -1,0 +1,179 @@
+body {
+    font-family: arial;
+    font-family: 'Patrick Hand SC', cursive;
+    overflow: hidden;
+}
+input[type=text], select {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#add {
+    background-color:  #c01818; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Patrick Hand SC', 
+}
+
+#add:hover {
+    background-color:  #75160d; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#create-wheel {
+    background-color:  #0084B6; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Patrick Hand SC', 
+}
+
+#create-wheel:hover {
+    background-color:  #005FAE; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Gloria Hallelujah', 
+}
+
+#spin {
+    background-color:  #F37321; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Patrick Hand SC', 
+}
+
+#spin:hover {
+    background-color:  #CD6E2D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Patrick Hand SC';
+}
+
+#win-screen {
+    width: 100vw;
+    height: 100vh;
+    background-color: #CD6E2D;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#win-text {
+    color: #FFFFFF;
+    font-family: 'Patrick Hand SC';
+    font-size: 81px;
+    padding-top: -50px;
+}
+
+
+/* Sets the background image for the wheel */
+td.the_wheel
+{
+    background-image: url(./wheel_back.png);
+    background-position: center;
+    background-repeat: none;
+}
+
+/* Do some css reset on selected elements */
+h1, p
+{
+    margin: 0;
+}
+
+div.power_controls
+{
+    margin-right:70px;
+}
+
+div.html5_logo
+{
+    margin-left:70px;
+}
+
+/* Styles for the power selection controls */
+table.power
+{
+    background-color: #cccccc;
+    cursor: pointer;
+    border:1px solid #333333;
+}
+
+table.power th
+{
+    background-color: white;
+    cursor: default;
+}
+
+td.pw1
+{
+    background-color: #6fe8f0;
+}
+
+td.pw2
+{
+    background-color: #86ef6f;
+}
+
+td.pw3
+{
+    background-color: #ef6f6f;
+}
+
+/* Style applied to the spin button once a power has been selected */
+.clickable
+{
+    cursor: pointer;
+}
+
+#form-div {
+    float: left;
+    margin-left: 10%;
+    margin-top: 10%;
+}
+#wheel-div {
+    float: right;
+    margin-right: 10%;
+}
+
+#header-text {
+    text-align: center;
+}
